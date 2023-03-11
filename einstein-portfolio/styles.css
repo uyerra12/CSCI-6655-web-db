@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    grid-template-areas: 
+    "header"
+    "main";
+}
+.toggle-button{
+    cursor: pointer;
+    display: none;
+}
+.bar{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+}
+header > nav > .nav-links > ul{
+    list-style-type: none;
+    text-align: right;
+    margin-right: 100px;
+}
+.nav-links > ul > li{
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+.nav-links > ul > li > a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+header{
+    background-color: rgb(51, 193, 240);
+    padding: 15px;
+    grid-area: header;
+    position: sticky;
+    top: 0;
+}
+main{
+    margin-top: 3em;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 3em;
+    grid-area: main;
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-auto-rows: max-content;
+    grid-template-areas: 
+    "image aboutme"
+    "papers papers"
+    "experience experience"
+    "blogs blogs"
+    "hobbies hobbies"
+    "images images";
+    
+}
+#image{
+    text-align: center;
+    grid-area: image;
+}
+#aboutme{
+    grid-area: aboutme;
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 30px;
+    scroll-margin-top: 60px;
+}
+#aboutme > ul > li{
+    font-size: large;
+    margin: 5px;
+}
+#papers{
+    grid-area: papers;
+    margin-top: 80px;
+    scroll-margin-top: 60px;
+}
+.paper{
+    display: inline-block;
+    width: 48%;
+    box-shadow: 0px 0px 10px #5c5c4b;
+    margin: 12px;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 20px;
+    background-color: aliceblue;
+}
+#heading{
+    position: relative;
+    left: 80px;
+    bottom: 50px;
+    margin-right: 100px;
+}
+#link{
+    position: relative;
+    left:80px;
+    bottom: 45px;
+    margin-right: 100px;
+}
+#experience{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    grid-area: experience;
+    margin-top: 50px;
+    background-color: antiquewhite;
+    scroll-margin-top: 60px;
+}
+#experience > ul{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+}
+#experience > ul > li{
+    margin: 5px;
+    margin-left: 25px;
+}
+#blogs{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    grid-area: blogs;
+    margin-top: 50px;background-color: beige;
+    scroll-margin-top: 60px;
+}
+#blogs > div > ul > li{
+    margin: 5px;
+    margin-left: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+#hobbies{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    grid-area: hobbies;
+    margin-top: 50px;
+    background-color: blanchedalmond;
+    scroll-margin-top: 60px;
+}
+#hobbies > ul > li{
+    margin: 5px;
+    margin-left: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+#image-collection{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    grid-area: images;
+    margin-top: 50px;
+    background-color: #f9e8ec;
+    overflow-y: scroll;
+    height: 400px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.column{
+    float: left;
+    width:25%;
+    padding: 5px;
+}
+footer{
+    background-color: rgb(143, 217, 247);
+    padding: 15px;
+}
+@media only screen and (max-width:1200px){
+    .paper{
+        margin-left: 0px;
+        margin-right: 0px;
+        display: block;
+        width: auto;
+    }
+}
+@media only screen and (max-width:600px){
+    .toggle-button{
+        display: block;
+        position: absolute;
+        right: 30px;
+        top:8px
+
+    }
+    header{
+        padding: 20px;
+    }
+    .nav-links{
+        display: none;
+        margin-top: 20px;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-links > ul{
+        width: 100%;
+        padding: 0px;
+    }
+    .nav-links > ul > li{
+        display: block;
+        margin-top: 5px;
+        text-align: center;
+    }
+    .paper{
+        margin-left: 0px;
+        margin-right: 0px;
+        display: block;
+        width: auto;
+        background-color: aliceblue;
+    }
+    main{
+        margin-left: 10px;
+        margin-right: 10px;
+        grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
+        grid-template-areas: 
+        "image"
+        "aboutme"
+        "papers"
+        "experience"
+        "blogs"
+        "hobbies"
+        "images";
+    }
+    #aboutme{
+        margin-right: 0px;
+        padding-left: 30px;
+    }
+    header > nav > div > ul > li:hover{
+        transform:none;
+        transition: 0.2s;
+        background-color: #bbe9fd;
+    }
+    .column{
+        float:none;
+        width: 100%;
+    }
+    #aboutme, #papers, #experience, #blogs, #hobbies{
+        scroll-margin-top: 200px;
+    }
+
+}
